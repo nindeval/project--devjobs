@@ -18,7 +18,7 @@ app.use('/api', apiRouter)
 app.use('/', pageRouter)
 
 app.use((request, response)=>{
-  response.send('<h1>404 - PAGE NOT FOUND</h1>')
+  response.render('404.ejs')
 })
 
 app.listen(PORT, ()=>{
