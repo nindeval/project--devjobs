@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
         .unsigned()
         .references('id')
         .inTable('companies')
+        .onDelete('cascade')
 
       return jobsTable
     })

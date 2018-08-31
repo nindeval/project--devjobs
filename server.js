@@ -4,6 +4,8 @@ const ejs = require('ejs')
 const knex = require('knex')
 const { Model } = require('objection')
 
+const bodyParser = require('body-parser')
+
 const dbConfigObj = require('./knexfile.js')
 
 const pageRouter = require(`./src/routes/pageRouter.js`)
@@ -24,8 +26,12 @@ app.engine( 'ejs', ejs.renderFile )
 app.set('view engine', 'ejs')
 app.set('views', `${__dirname}/src/views`)
 
+app.use( bodyParser.urlencoded({ extended: false }) )
+app.use( bodyParser.json() )
+
 app.use('/api', apiRouter)
 app.use('/', pageRouter)
+
 
 app.use((request, response)=>{
   response.render('404.ejs')
