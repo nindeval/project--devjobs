@@ -82,7 +82,7 @@ const createOneJob = (request, response)=> {
       response.status(200).json(newRecord)
     })
 }
-const editOneJob = ( request, response)=> {
+const editOneJob = (request, response)=> {
   Job
     .query()
     .updateAndFetchById(request.params._id, request.body)
@@ -90,7 +90,7 @@ const editOneJob = ( request, response)=> {
       response.status(200).json(updateRecord)
     })
 }
-const deleteOneJob = ( request, response)=> {
+const deleteOneJob = (request, response)=> {
   Job
     . query()
     .deleteById(request.params._id)
