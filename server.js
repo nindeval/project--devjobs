@@ -53,6 +53,10 @@ app.use('/auth', authRouter)
 app.use('/api', apiRouter)
 app.use('/', pageRouter)
 
+app.use((request, response)=>{
+  response.render('reactApp.ejs')
+})
+
 
 app.use((request, response)=>{
   response.render('404.ejs')
