@@ -6,6 +6,8 @@ export default class CompanyListings  extends React.Component {
     return   <div className="page page--companies">
         <h2>Companies</h2>
         {/* render CompanyCard components here ... */}
+
+
       </div>
   }
 }

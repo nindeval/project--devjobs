@@ -1,11 +1,11 @@
-{
+                                   {
   "name": "devjobs",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node server.js",
+    "start": "node server.js",
     "dev": "npm-run-all --parallel dev:server dev:webpack",
     "dev:webpack": "NODE_ENV=development ./node_modules/.bin/webpack --watch",
     "dev:server": "NODE_ENV=development nodemon server.js --watch src --watch server.js --ignore src/client"
@@ -29,7 +29,9 @@
     "pg": "^7.4.3",
     "react": "16.1.0",
     "react-dom": "16.1.0",
-    "react-router-dom": "4.2.0"
+    "react-notification-system": "^0.2.17",
+    "react-router-dom": "4.2.0",
+    "superagent": "^3.8.3"
   },
   "devDependencies": {
     "babel-core": "6.26.0",

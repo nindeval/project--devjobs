@@ -17,7 +17,7 @@ const dbConfigObj = require('./knexfile.js')
 
 const pageRouter = require(`./src/routers/pageRouter.js`)
 const apiRouter = require(`./src/routers/apiRouter.js`)
-const authRouter = require('./src/routers/authRouter')
+const authRouter = require('./src/routers/authRouter.js')
 
 const app = express()
 const PORT = 3000
@@ -26,8 +26,8 @@ const appDb = knex(dbConfigObj.development)
 Model.knex(appDb)
 app.locals.db = appDb
 
-app.use(cookieParser())
-app.use(cookieSession({
+app.use( cookieParser() )
+app.use( cookieSession( {
   name: 'cookiemonster',
   secret: 'superdupersupersecret',
   httpOnly: true,
@@ -58,10 +58,17 @@ app.use((request, response)=>{
 })
 
 
-app.use((request, response)=>{
-  response.render('404.ejs')
-})
+// app.use((request, response)=>{
+//   response.render('404.ejs')
+// })
+
+// app.listen(PORT, ()=>{
+//   console.log(`App listening on localhost:${PORT}`);
+// })
 
 app.listen(PORT, ()=>{
+  console.log('==========================')
   console.log(`App listening on localhost:${PORT}`);
+  console.log(`Environment : ${process.env.NODE_ENV}`)
+  console.log('==========================')
 })

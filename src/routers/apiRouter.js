@@ -92,7 +92,7 @@ const editOneJob = (request, response)=> {
 }
 const deleteOneJob = (request, response)=> {
   Job
-    . query()
+    .query()
     .deleteById(request.params._id)
     .then((dbResponse)=>{
       response.status(200).json(dbResponse)
